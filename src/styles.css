@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.game-info {
+  text-align: center;
+  margin-bottom: 20px;
+  min-height: 24px;
+  font-weight: bold;
+}
+
+.ship-placement {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.boards-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.board-wrapper {
+  flex: 1;
+  min-width: 300px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 2px;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.cell {
+  background-color: #ddf;
+  border: 1px solid #aac;
+  cursor: pointer;
+  aspect-ratio: 1;
+}
+
+.ship {
+  background-color: #999;
+}
+
+.hit {
+  background-color: #f66;
+}
+
+.miss {
+  background-color: #aaa;
+  position: relative;
+}
+
+.miss::after {
+  content: '•';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #555;
+}
+
+.controls {
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4c7faf;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #3a6a96;
+}
+
+.placement-mode .cell:hover {
+  background-color: #bbd;
+}
+
+.valid-placement {
+  background-color: #8f8 !important;
+}
+
+.invalid-placement {
+  background-color: #f88 !important;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
